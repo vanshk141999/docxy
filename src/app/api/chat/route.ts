@@ -13,7 +13,7 @@ const config = new Configuration({
 });
 const openai = new OpenAIApi(config);
 
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<any> {
   try {
     const { messages, chatId } = await req.json();
     const _chats = await db.select().from(chats).where(eq(chats.id, chatId));
