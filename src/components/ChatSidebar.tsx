@@ -5,13 +5,15 @@ import { Button } from "./ui/button";
 import { MessageCircle, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import SubscriptionButton from "./SubscriptionButton";
 
 type Props = {
   chats: DrizzleChat[];
   chatId: number;
+  isPro: boolean;
 };
 
-const ChatSidebar = ({ chats, chatId }: Props) => {
+const ChatSidebar = ({ chats, chatId, isPro }: Props) => {
   return (
     <div className="w-full max-h-screen overflow-scroll soff p-4 text-gray-200 bg-gray-900">
       <Link href={"/"}>
@@ -38,10 +40,12 @@ const ChatSidebar = ({ chats, chatId }: Props) => {
           </Link>
         ))}
       </div>
-      <div className="absolute bottom-4 left-4">
-        <div className="flex items-center text-sm flex-wrap text-slate-500">
-          <Link href={"/"}>Home</Link>
-        </div>
+      <div className="absolute bottom-4 left-4 text-black">
+        {/* Might be used later */}
+        {/* <div className=" items-center"> */}
+        {/* <Link href={"/"}>Home</Link> */}
+        <SubscriptionButton isPro={isPro} />
+        {/* </div> */}
       </div>
     </div>
   );
