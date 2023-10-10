@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Inbox, Loader2 } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 import toast from "react-hot-toast";
-import { getS3Url, uploadToS3 } from "@/lib/s3";
+import { uploadToS3 } from "@/lib/s3";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useRouter } from "next/navigation";
